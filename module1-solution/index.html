@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="script/angular.min.js"></script>
+    <script src="script/app.js"></script>
+    <style type="text/css">
+        .body {
+            font-family:Verdana;
+            font-size:14px;
+        }
+        .msg {
+        color:green;
+        }
+        .errMsg {
+        color:red;
+        }
+    </style>
+</head>
+<body ng-app="LunchCheck">
+    <div ng-controller="LunchCheckController">
+        <input type="text" ng-model="lunchItems" title="DON'T consider an empty item, i.e., , , as an item towards to the count." /> <button ng-click="checkIfTooMuch()">Check If Too Much</button>
+        <br /><h3 ng-class="isEmpty == true? 'errMsg':' msg'">{{msg}}</h3>      
+    </div>
+</body>
+</html>
