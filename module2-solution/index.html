@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>:: Shopping List Check Off ::</title>
+    <link href="style/bootstrap.css" rel="stylesheet" />
+
+    <script src="script/angular.min.js"></script>
+    <script src="script/app.js"></script>
+</head>
+<body ng-app="ShoppingListCheckOff">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><h2>Shopping List Checkk Off</h2></div>
+            <div class="col-md-6 col-xs-6" ng-controller="ToBuyController as toBuy">
+                <h3>To Buy</h3>
+                <div ng-if="toBuy.items.length == 0" class="alert alert-info">Everything is bought!</div>
+                <ul class="list-group">
+                    <li ng-repeat="item in toBuy.items" class="list-group-item">
+                        <button ng-click="toBuy.buyItem($index)" class="btn btn-info badge">Bought</button>
+                        Buy {{item.item_quantity}} {{item.item_name}} 
+                    </li>
+                </ul>
+             
+            </div>
+            <div class="col-md-6 col-xs-6" ng-controller="AlreadyBoughtController as bought">
+                <h3>Already Bought</h3>
+                <div ng-if="bought.items.length == 0" class="alert alert-danger">Nothing bought yet</div>
+                <ol class="list-group">
+                    <li ng-repeat="item in bought.items" class="list-group-item">
+                        Bought {{item.item_quantity}} {{item.item_name}}
+                    </li>
+                </ol>
+                    
+</div>
+        </div>
+    </div>
+
+</body>
+</html>
