@@ -44,7 +44,11 @@
       {
           item_name: 'Choclates',
           item_quantity: 7
-      }
+      },
+        {
+            item_name: 'Cake',
+            item_quantity: 15
+        }
         ];
 
         var boughtItems = [];
